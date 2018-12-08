@@ -1,0 +1,12 @@
+.header-search>form .search-input {padding-left: 50px; padding-right: 45px;}
+.header-logo .logo>img, .my_logo {max-width: 100px; max-height: 100px;}
+.product.product-single .product-body .right_form {float: right;}
+.product.product-single .product-body .left_form {float: left;}
+.product.product-single .product-thumb>img {height: 300px;}
+.myh {color: #F8694A; margin-top: 50px;}
+.like {color: #F8694A; padding: 5px;}
+.banner>img {max-height: 600px;}
+.add-to-cart a {color: #fff;}
+.row {margin-bottom: 40px;}
+.clear {clear: both;}
+.rep {height: 50px;}

@@ -1,0 +1,62 @@
+.my_profile {
+    min-height: 400px;
+    background-image: url('../img/star_galaxy_glow_light.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.my_profile .over {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.my_profile .card {
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+.card .pro_img {
+    margin-top: 50px;
+}
+
+.card .pro_img img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.card .pro_img p, .card a {
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.card .pro_img p {
+    text-transform: uppercase;
+}
+
+.card a:hover {
+    color: #F8694A;
+}
+
+.card .pro_img button {
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+.card .pro_link {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+input[type=file] {
+    display: none;
+}

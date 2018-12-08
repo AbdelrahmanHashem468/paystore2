@@ -1,0 +1,26 @@
+$to = '*@gmail.com';
+
+$subject = 'Your verification code';
+
+$myemail = 'paystoreoss@gmail.com';
+
+$myname = 'PayStore';
+$chars = "abcdefghijkmnopqrstuvwxyz023456789"; 
+    srand((double)microtime()*1000000); 
+    $i = 0; 
+    $pass = '' ; 
+    while ($i <= 7) { 
+        $num = rand() % 33; 
+        $tmp = substr($chars, $num, 1); 
+        $pass = $pass . $tmp; 
+        $i++; 
+    } 
+
+$message = $pass;
+
+$headers = "From: ".$myname." <".$myemail.">\r\n";
+
+if(mail($to, $subject, $message, $headers)){
+    echo "<script>alert('sent')</script>";
+}else
+echo "<script>alert('try again')</script>";
