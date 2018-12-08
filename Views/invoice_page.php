@@ -68,7 +68,7 @@
                         $my_pro = new Product(NULL);
                         
                         $res = $inv->get_invoice($_SESSION['s_id']);
-                        
+                        if (!is_null($res))
                         for($i=0; $i<count($res); $i++) {
                             $total_cost = $res[$i]['total_cost'];
                             $pay_method = $res[$i]['pay_method'];

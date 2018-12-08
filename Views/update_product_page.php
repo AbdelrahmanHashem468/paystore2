@@ -64,16 +64,16 @@
                 ?>
                 
                 <form action="../Models/process_update_product.php" method="post" enctype="multipart/form-data">
-                    <p>Type: <?php echo $info[0]['Type']; ?></p>
+                    <p>Type: <?php echo $info[0]['type']; ?></p>
                     <input type="hidden" name="id" value="<?php echo $id; ?>" required>
                     <p>Name</p>
-                    <input type="text" name="name" placeholder="Name" value="<?php echo $info[0]['Name']; ?>" required>
+                    <input type="text" name="name" placeholder="Name" value="<?php echo $info[0]['name']; ?>" required>
                     <p>Brand</p>
-                    <input type="text" name="brand" placeholder="Brand" value="<?php echo $info[0]['Brand']; ?>" required>
+                    <input type="text" name="brand" placeholder="Brand" value="<?php echo $info[0]['brand']; ?>" required>
                     <p>Price</p>
-                    <input type="text" name="price" placeholder="Price" value="<?php echo $info[0]['Price']; ?>" required>
+                    <input type="text" name="price" placeholder="Price" value="<?php echo $info[0]['price']; ?>" required>
                     <p>Quantity</p>
-                    <input type="number" name="quantity" placeholder="Quantity" value="<?php echo $info[0]['Quantity']; ?>" required>
+                    <input type="number" name="quantity" placeholder="Quantity" value="<?php echo $info[0]['quantity']; ?>" required>
                     <p>Choose product's image</p>
                     <input type="file" name="image" class="iFile" value="<?php $info[0]['image_name'];?>">
                     <input type="submit" style="width: 30%" class="action"  name="submit" value="Update">

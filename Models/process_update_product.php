@@ -1,11 +1,12 @@
 <?php
 session_start();
-
+include_once '../rsa.class.php';
 include_once './DataBase.php';
 $file_name = "./credential.php";
 $db = DataBase::getInstance($file_name);
 $conn = $db->get_connection();
-
+$RSA = new RSA();
+$keys = $RSA->generate_keys ('9990454949', '9990450271', 0);
 $id       = filter_input(INPUT_POST, 'id');
 $name     = filter_input(INPUT_POST, 'name');
 $brand    = filter_input(INPUT_POST, 'brand');
@@ -34,7 +35,7 @@ $image_name = load_new_name();
         $bool = FALSE;
         echo "<script> alert('can't be added'); </script>";
     }else{
-         $sql = "SELECT image_name from product where Id = $id";
+         $sql = "select image_name from product where Id = $id";
          $success = $conn->query($sql);
          if (!$success) {
                 die("<br />Can't update the image: " . $conn->error);
@@ -42,6 +43,7 @@ $image_name = load_new_name();
               $success=$db->fetch_query($sql);
               $res=$success[0]['image_name'];
               unlink('../Views/img/'.$res);
+        $image_name= $RSA->encrypt ($image_name, $keys[1], $keys[0], 5);
         $sql = "UPDATE product SET  image_name = '$image_name' where Id = $id";
          }
          $success = $conn->query($sql);
@@ -51,6 +53,12 @@ $image_name = load_new_name();
     }
 }
 if($bool) {
+
+   
+    $name= $RSA->encrypt ($name, $keys[1], $keys[0], 5);
+    $brand= $RSA->encrypt ($brand, $keys[1], $keys[0], 5);
+    $price= $RSA->encrypt ($price, $keys[1], $keys[0], 5);
+    $quantity= $RSA->encrypt ($quantity, $keys[1], $keys[0], 5);
  $sql = "UPDATE product SET Name = '$name', Brand = '$brand', Price = $price, Quantity = $quantity  where Id = $id";
  
     $success = $conn->query($sql);
